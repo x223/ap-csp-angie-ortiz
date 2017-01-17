@@ -1,0 +1,65 @@
+var question;
+var paragraph;
+var button;
+var answer;
+var pasta = [ "spaghetti and meatballs", "ravioli", "chicken alfredo", "carbonara" ];
+var meat = [ "fried chicken", "half-racked ribs", "chicken wings", "baby back ribs", "sirloin steak", "boneless wings", "chicken tenders", "chicken nuggets" ];
+var salad = [ "garden salad", "caesar salad", "chicken salad", "grilled salmon salad", "macaroni salad" ];
+var soup = [ "chicken soup", "vegetable soup", "chicken noodle soup", "black bean soup", "broccoli cheddar soup"];
+var seafood = ["jumbo shrimp", "crispy shrimp", "grilled salmon", "crab legs", "oysters", "fried calamari", "scallops", "lobster", "fish fillet"];
+
+function setup() { 
+  createCanvas(windowWidth, windowHeight);
+  question= createInput("What item from the menu would you prefer?") //css input text styles, callmenick.com
+  question.position(300,100);
+  button = createButton("Generate");
+  button.position(450,150);
+  textSize(20);
+	text("Menu", 40, 40);
+	fill("#36454F");
+  textSize(15);
+	text("Pasta", 40, 60);
+	fill("#36454F");
+  textSize(15);
+	text("Meat", 40, 80);
+	fill("#36454F");
+  textSize(15);
+	text("Salad", 40, 100);
+	fill("#36454F");
+  textSize(15);
+	text("Soup", 40, 120);
+	fill("#36454F");
+  textSize(15);
+	text("Seafood", 40, 140);
+	fill("#36454F");
+
+
+} 
+
+function draw() { 
+	button.mousePressed(generator); 
+
+}
+
+function generator() {
+  answer = question.value()
+	background('white');
+	if (answer == "Pasta") {
+  text(random(pasta),400,500);
+}
+	else if (answer == "Meat") {
+    
+	text(random(meat),400,500);
+} 
+  else if (answer == "Salad") {
+  text(random(salad),400,500);
+}
+  else if (answer =="Soup") {
+  text(random(soup),400,500);
+}
+  else if (answer == "Seafood") {
+  text(random(seafood),400,500);
+}
+}
+
+  
